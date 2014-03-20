@@ -1,0 +1,22 @@
+<head>
+  <title>googlemaps-meteor</title>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+</head>
+
+<body>
+  {{> mapShow}}
+</body>
+
+<template name="mapSearch">
+  <h1>Demo: Using maps to search.</h1>
+  <div>
+  {{>maps}}
+  </div>
+</template>
+
+<template name="mapShow">
+  <h1>Demo: Using maps to display pre-loaded data.</h1>
+  <div>
+    {{>maps}}
+  </div>
+</template>
