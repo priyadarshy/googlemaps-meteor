@@ -12,6 +12,11 @@ Template.mapShow.created = function() {
   Session.set("mapInitialLocation", testStartingData);
 };
 
+Template.mapSearch.created = function() {
+  Session.set("mapInitialLocation", testStartingData);
+};
+
+
 Template.mapShow.destroyed = function() {
 
 };

@@ -61,7 +61,6 @@ gmaps = {
 
     // Initialize the map based on whether an initial location was passed or not.
     if (! initialLocation) {
-      console.log(">>>>> Initialization Default Bounds. No initialLocation Found. >>>>>");
       // Custom initialization for a new map.
       var defaultBounds = new google.maps.LatLngBounds(
         new google.maps.LatLng(37.506458, -122.626762),
@@ -80,6 +79,7 @@ gmaps = {
       // Center the map to the marker and zoom appropriately.
       map.setCenter(new google.maps.LatLng(initialLocation.coordinate.lat, initialLocation.coordinate.lng));
       map.setZoom(16);
+      $("#" + searchBoxId).val((initialLocation.name || "") + ' ' + initialLocation.address);
     };
 
 
@@ -128,7 +128,6 @@ gmaps = {
         var markerFormattedAddress = markerData.formatted_address;
         var markerGeometry = _.object(["lat", "lng"],_.first(_.values(markerData.geometry.location),2));
         var locationInfo =  {name: markerName, address:markerFormattedAddress, coordinate:markerGeometry};
-        //console.log(locationInfo);
         locationUpdateCallback(locationInfo);
 
         bounds.extend(place.geometry.location);
